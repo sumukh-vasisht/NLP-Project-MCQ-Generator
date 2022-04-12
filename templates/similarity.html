@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MCQ Generator</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        .form {
+            margin-top: 5%;
+            margin-left: 25%;
+            width: 50%;
+        }
+        
+        p {
+            color: white;
+            /* font-family: "Actor"; */
+            font-family: "Dekko";
+            font-size: 200%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: white;
+            font-family: "Advent Pro";
+            font-size: 400%;
+            text-align: center;
+        }
+        
+        .submit-button {
+            display: inline-block;
+            /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
+            border: 1px solid white;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 15pt;
+            font-family: "Advent Pro";
+            background-color: white;
+            color: black;
+            width: 80%;
+            margin-left: 10%;
+        }
+        
+        .submit-button:hover {
+            color: white;
+            background-color: black;
+        }
+        
+        input[type="text"] {
+            color: white;
+            background-color: black;
+            border: 5px solid white;
+            width: 80%;
+            margin-left: 10%;
+            height: 200px;
+            font-size: 20px;
+            font-family: "Dekko";
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="signup-form" method="POST" action="/textSimilarity" enctype="multipart/form-data" class="form">
+        <h1>Subjective Answer Evaluator</h1>
+        <p> Enter Model Answer</p>
+        <input type="text" name="modelText" class="custom-textinput" placeholder={{modelText}}/>
+        <p> Enter Student Answer</p>
+        <input type="text" name="answerText" class="custom-textinput" placeholder={{answerText}}/>
+        <br> <br>
+        <input type="submit" value="Calculate Student Score" onclick=textSimilarity() class="submit-button">
+    </form>
+
+    <p>Student Score: {{score}}</p>
+
+</body>
+
+</html>
